@@ -5,11 +5,11 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.432);
+  border-bottom: 1px solid #8080806e;
 }
 .navbar--logo {
   /* font-size: 80px; */
-  height: 100px;
+  height: 150px;
 }
 .navbar--ul {
   display: flex;

@@ -1,6 +1,5 @@
-import React from "react";
-import { Carrito } from "../Carrito/Carrito";
-import Logo from "./Logo-cafe.png";
+import { Link, NavLink } from "react-router-dom";
+import { Carrito } from "./Carrito/Carrito";
 import "./navegacion.css";
 
 export const Navegacion = () => {
@@ -9,30 +8,53 @@ export const Navegacion = () => {
       <nav className="container--navbar">
         {/* LOGO */}
         <div>
-          <img src={Logo} className="navbar--logo" alt="" />
+          <Link to="/">
+            <img
+              src="../public/assets/logo-cafeteria.png"
+              className="navbar--logo"
+              alt="Logo"
+            />
+          </Link>
         </div>
 
         {/* Secciones de la navbar */}
         <ul className="navbar--ul">
           <li className="navbar--ul--li">
-            <a className="navbar--ul--li--a" href="#section1">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "btn btn-dark" : "navbar--ul--li--a"
+              }
+              to="/category/cafe"
+            >
               Cafe
-            </a>
+            </NavLink>
           </li>
           <li className="navbar--ul--li">
-            <a className="navbar--ul--li--a" href="#section2">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "btn btn-dark" : "navbar--ul--li--a"
+              }
+              to="/category/almuerzo"
+            >
               Almuerzo
-            </a>
+            </NavLink>
           </li>
           <li className="navbar--ul--li">
-            <a className="navbar--ul--li--a" href="#section3">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "btn btn-dark" : "navbar--ul--li--a"
+              }
+              to="/category/bebidas"
+            >
               Bebidas
-            </a>
+            </NavLink>
           </li>
         </ul>
 
         {/* ICON CART + Cantidad */}
-        <Carrito />
+        <Link to="/cart">
+          <Carrito />
+        </Link>
       </nav>
     </div>
   );
