@@ -1,10 +1,4 @@
-import {
-  addDoc,
-  collection,
-  doc,
-  getFirestore,
-  updateDoc,
-} from "firebase/firestore";
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useCartContext } from "../context/CartContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -17,7 +11,6 @@ const CartContainer = () => {
   });
   const [id, setId] = useState("");
   const { cartList, deleteCart, precioTotal, eliminarItem } = useCartContext();
-  console.log(cartList);
 
   const handleAddOrder = async (evt) => {
     evt.preventDefault();
@@ -51,13 +44,6 @@ const CartContainer = () => {
         });
         deleteCart();
       });
-
-    //update doc
-    // const queryDB = getFirestore();
-    // const queryUpdateProduct = doc(queryDB, "products", "0xzyekvnqxgv7Vfy9usf");
-    // updateDoc(queryUpdateProduct, {
-    //   stock: 499,
-    // }).then(() => console.log("se actualizo"));
   };
 
   const handleOnChange = (evt) => {
@@ -66,7 +52,7 @@ const CartContainer = () => {
       [evt.target.name]: evt.target.value,
     });
   };
-  console.log(dataForm);
+
   return (
     <>
       {id != "" && <h3>Se ha realizado con exito el pedido: {id}</h3>}
