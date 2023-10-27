@@ -10,7 +10,7 @@ export const Navegacion = () => {
         <div>
           <Link to="/">
             <img
-              src="../public/assets/logo-cafeteria.png"
+              src="https://i.ibb.co/PCNRyKJ/logo-cafeteria.png"
               className="navbar--logo"
               alt="Logo"
             />
